@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechPulse News</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <meta name="description"
+        content="Read the latest technology news from TechPulse, covering AI, gadgets, software, cybersecurity, programming, and emerging technology.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="author" content="TechPulse Team">
+    <meta name="theme-color" content="#0F172A">
+    <link rel="canonical" href="https://techpulse-news-blog.vercel.app/pages/news.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://techpulse-news-blog.vercel.app/pages/news.html">
+    <meta property="og:title" content="TechPulse News | Latest Technology News">
+    <meta property="og:description"
+        content="Read the latest technology news from TechPulse, covering AI, gadgets, software, cybersecurity, programming, and emerging technology.">
+    <meta property="og:site_name" content="TechPulse">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="TechPulse News | Latest Technology News">
+    <meta name="twitter:description"
+        content="Read the latest technology news from TechPulse, covering AI, gadgets, software, cybersecurity, programming, and emerging technology.">
+    <meta name="twitter:url" content="https://techpulse-news-blog.vercel.app/pages/news.html">
+
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "TechPulse",
+    "url": "https://techpulse-news-blog.vercel.app",
+    "description": "Technology news, articles, guides, and insights.",
+    "publisher": {
+    "@type": "Organization",
+    "name": "TechPulse Team"
+    },
+    "inLanguage": "en"
+}
+    </script>
+
+    <link rel="manifest" href="/site.webmanifest">
+</head>
+
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100">
+
+    <!-- ================= HEADER ================= -->
+    <header class="bg-white dark:bg-[#1e293b] border-b border-gray-200 dark:border-gray-700">
+        <div class="max-w-7xl mx-auto px-5 lg:px-8 h-16 flex items-center justify-between">
+
+            <!-- Logo -->
+            <a href="../index.html" class="flex items-center gap-2">
+                <div
+                    class="flex h-8 w-8 items-center justify-center rounded-md bg-gray-900 text-sm text-blue-500 dark:bg-blue-500 dark:text-white">
+                    <span class="material-icons">bolt</span>
+                </div>
+
+                <span class="text-2xl font-bold tracking-tight">
+                    TechPulse
+                </span>
+            </a>
+
+            <!-- Navigation -->
+            <nav class="hidden md:flex items-center gap-7 text-md font-medium">
+
+                <a href="../index.html"
+                    class="text-gray-500 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400">
+                    Home
+                </a>
+
+                <a href="#"
+                    class="text-blue-600 dark:text-blue-400 border-b-2 border-blue-600 dark:border-blue-400 pb-1">
+                    News
+                </a>
+
+                <a href="./blog.html"
+                    class="text-gray-500 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400">
+                    Blog
+                </a>
+
+                <a href="./categories.html"
+                    class="text-gray-500 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400">
+                    Categories
+                </a>
+
+                <!-- Dark Mode Button -->
+                <button onclick="toggleDarkMode()"
+                    class="theme-toggle rounded-lg p-2 transition hover:bg-gray-200 dark:hover:bg-gray-800"
+                    aria-label="Switch to dark mode" title="Dark Mode">
+
+                    <span class="dark:hidden">🌙</span>
+                    <span class="hidden dark:inline">☀️</span>
+
+                </button>
+
+            </nav>
+
+            <!-- Mobile button -->
+            <button class="md:hidden text-xl dark:text-white">
+                ☰
+            </button>
+
+        </div>
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+    <header class="bg-[#08182d] text-white dark:bg-slate-950">
+
+        <div class="max-w-7xl mx-auto px-5 lg:px-10 py-20">
+
+            <div class="max-w-2xl">
+
+                <span
+                    class="inline-block bg-slate-700/50 text-slate-300 rounded-full px-3 py-1 mb-3 text-[10px] tracking-wider dark:bg-slate-800 dark:text-slate-300">
+                    ⚡ AUTOMOTIVE ENGINEERING FEED
+                </span>
+
+                <h1 class="text-5xl md:text-5xl font-bold mb-4">
+                    Latest Technology News
+                </h1>
+
+                <p class="text-[9px] md:text-[14px] py-3 text-slate-300 leading-4 max-w-xl dark:text-slate-400">
+                    Stay updated with the newest tech news, trends, and
+                    innovations shaping enterprise architectures,
+                    global hardware, and artificial intelligence.
+                </p>
+
+            </div>
+        </div>
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+    <main class="max-w-7xl mx-auto px-5 lg:px-9 py-20">
+
+        <div class="flex flex-wrap gap-2 mb-8">
+
+            <button onclick="filterCards('all')"
+                class="filter-btn px-5 py-1.5 rounded-full bg-blue-600 text-white text-[18px]">
+                All
+            </button>
+
+            <button onclick="filterCards('AI')"
+                class="filter-btn px-5 py-1.5 rounded-full bg-white border border-slate-200 text-slate-500 text-[18px] hover:text-blue-600 hover:border-blue-300 dark:bg-slate-800 dark:border-slate-700 dark:text-slate-300">
+                AI
+            </button>
+
+            <button onclick="filterCards('GADGETS')"
+                class="filter-btn px-5 py-1.5 rounded-full bg-white border border-slate-200 text-slate-500 text-[18px] hover:text-blue-600 hover:border-blue-300 dark:bg-slate-800 dark:border-slate-700 dark:text-slate-300">
+                Gadgets
+            </button>
+
+            <button onclick="filterCards('SOFTWARE')"
+                class="filter-btn px-5 py-1.5 rounded-full bg-white border border-slate-200 text-slate-500 text-[18px] hover:text-blue-600 hover:border-blue-300 dark:bg-slate-800 dark:border-slate-700 dark:text-slate-300">
+                Software
+            </button>
+
+            <button onclick="filterCards('CYBERSECURITY')"
+                class="filter-btn px-5 py-1.5 rounded-full bg-white border border-slate-200 text-slate-500 text-[18px] hover:text-blue-600 hover:border-blue-300 dark:bg-slate-800 dark:border-slate-700 dark:text-slate-300">
+                Cybersecurity
+            </button>
+
+            <button onclick="filterCards('PROGRAMMING')"
+                class="filter-btn px-5 py-1.5 rounded-full bg-white border border-slate-200 text-slate-500 text-[18px] hover:text-blue-600 hover:border-blue-300 dark:bg-slate-800 dark:border-slate-700 dark:text-slate-300">
+                Programming
+            </button>
+
+            <button onclick="filterCards('EMERGING TECH')"
+                class="filter-btn px-5 py-1.5 rounded-full bg-white border border-slate-200 text-slate-500 text-[18px] hover:text-blue-600 hover:border-blue-300 dark:bg-slate-800 dark:border-slate-700 dark:text-slate-300">
+                Emerging Tech
+            </button>
+
+        </div>
+
+
+        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+
+            <!-- ================= CARD 1 ================= -->
+            <article data-category="AI"
+                class="overflow-hidden rounded-lg border border-slate-200 bg-white text-gray-900 transition duration-100 hover:-translate-y-1 hover:shadow-[3px_3px_6px_rgba(0,0,0,0.8)] dark:border-slate-700 dark:bg-gray-900 dark:text-white">
+
+                <img src="./imag/image 1..jpeg" alt="Artificial Intelligence"
+                    class="h-48 w-full object-cover transition duration-300 hover:scale-110">
+
+                <div class="p-4">
+
+                    <span
+                        class="inline-block rounded-sm bg-purple-500 px-2 py-1 text-[11px] font-bold uppercase text-white">
+                        Ai
+                    </span>
+
+                    <h3 class="mt-3 text-lg font-bold leading-7 hover:underline">
+                        OpenAI Launches GPT-5 with Better Reasoning
+                    </h3>
+
+                    <p class="mt-2 text-sm leading-6 text-slate-500 dark:text-slate-400">
+                        OpenAI has announced GPT-5, a new model with improved reasoning and multimodal capabilities.
+                    </p>
+
+                    <div
+                        class="mt-4 flex items-center justify-between border-t border-slate-200 pt-3 text-xs text-slate-500 dark:border-slate-700 dark:text-slate-400">
+
+                        <span>By TechPulse Team</span>
+                        <span>Apr 25, 2025</span>
+                        <span>◷ 5 min read</span>
+
+                    </div>
+
+                </div>
+            </article>
+
+
+            <!-- ================= CARD 2 ================= -->
+            <article data-category="GADGETS"
+                class="overflow-hidden rounded-lg border border-slate-200 bg-white text-gray-900 transition duration-100 hover:-translate-y-1 hover:shadow-[3px_3px_6px_rgba(0,0,0,0.8)] dark:border-slate-700 dark:bg-gray-900 dark:text-white">
+
+                <img src="./imag/image 2.jpg" alt="Samsung Galaxy S25"
+                    class="h-48 w-full object-cover transition duration-300 hover:scale-110">
+
+                <div class="p-4">
+
+                    <span
+                        class="inline-block rounded-sm bg-sky-500 px-2 py-1 text-[11px] font-bold uppercase text-white">
+                        Gadgets
+                    </span>
+
+                    <h3 class="mt-3 text-lg font-bold leading-7 hover:underline">
+                        Samsung Unveils Galaxy S25 Series
+                    </h3>
+
+                    <p class="mt-2 text-sm leading-6 text-slate-500 dark:text-slate-400">
+                        Samsung introduces the Galaxy S25 with upgraded camera and AI features.
+                    </p>
+
+                    <div
+                        class="mt-4 flex items-center justify-between border-t border-slate-200 pt-3 text-xs text-slate-500 dark:border-slate-700 dark:text-slate-400">
+
+                        <span>By Jane Smith</span>
+                        <span>Apr 24, 2025</span>
+                        <span>◷ 5 min read</span>
+
+                    </div>
+
+                </div>
+            </article>
+
+
+            <!-- ================= CARD 3 ================= -->
+            <article data-category="SOFTWARE"
+                class="overflow-hidden rounded-lg border border-slate-200 bg-white text-gray-900 transition duration-100 hover:-translate-y-1 hover:shadow-[3px_3px_6px_rgba(0,0,0,0.8)] dark:border-slate-700 dark:bg-gray-900 dark:text-white">
+
+                <img src="imag/image 3.jpg" alt="Windows 12"
+                    class="h-48 w-full object-cover transition duration-300 hover:scale-110">
+
+                <div class="p-4">
+
+                    <span
+                        class="inline-block rounded-sm bg-blue-500 px-2 py-1 text-[11px] font-bold uppercase text-white">
+                        Software
+                    </span>
+
+                    <h3 class="mt-3 text-lg font-bold leading-7 hover:underline">
+                        Windows 12: What's New?
+                    </h3>
+
+                    <p class="mt-2 text-sm leading-6 text-slate-500 dark:text-slate-400">
+                        Microsoft gives a first look at Windows 12 with AI tools and a fresh design.
+                    </p>
+
+                    <div
+                        class="mt-4 flex items-center justify-between border-t border-slate-200 pt-3 text-xs text-slate-500 dark:border-slate-700 dark:text-slate-400">
+
+                        <span>By David Lee</span>
+                        <span>Apr 23, 2025</span>
+                        <span>◷ 5 min read</span>
+
+                    </div>
+
+                </div>
+            </article>
+
+
+            <!-- ================= CARD 4 ================= -->
+            <article data-category="CYBERSECURITY"
+                class="overflow-hidden rounded-lg border border-slate-200 bg-white text-gray-900 transition duration-100 hover:-translate-y-1 hover:shadow-[3px_3px_6px_rgba(0,0,0,0.8)] dark:border-slate-700 dark:bg-gray-900 dark:text-white">
+
+                <img src="imag/image 4.jpg" alt="Cybersecurity"
+                    class="h-48 w-full object-cover transition duration-300 hover:scale-110">
+
+                <div class="p-4">
+
+                    <span
+                        class="inline-block rounded-sm bg-red-500 px-2 py-1 text-[11px] font-bold uppercase text-white">
+                        Cybersecurity
+                    </span>
+
+                    <h3 class="mt-3 text-lg font-bold leading-7 hover:underline">
+                        New Cyber Attack Targets Small Businesses
+                    </h3>
+
+                    <p class="mt-2 text-sm leading-6 text-slate-500 dark:text-slate-400">
+                        Experts warn of increasing cyber attacks on small and medium businesses.
+                    </p>
+
+                    <div
+                        class="mt-4 flex items-center justify-between border-t border-slate-200 pt-3 text-xs text-slate-500 dark:border-slate-700 dark:text-slate-400">
+
+                        <span>By Sarah Kim</span>
+                        <span>Apr 22, 2025</span>
+                        <span>◷ 5 min read</span>
+
+                    </div>
+
+                </div>
+            </article>
+
+
+            <!-- ================= CARD 5 ================= -->
+            <article data-category="PROGRAMMING"
+                class="overflow-hidden rounded-lg border border-slate-200 bg-white text-gray-900 transition duration-100 hover:-translate-y-1 hover:shadow-[3px_3px_6px_rgba(0,0,0,0.8)] dark:border-slate-700 dark:bg-gray-900 dark:text-white">
+
+                <img src="imag/image 5.jpg" alt="JavaScript"
+                    class="h-48 w-full object-cover transition duration-300 hover:scale-110">
+
+                <div class="p-4">
+
+                    <span
+                        class="inline-block rounded-sm bg-emerald-500 px-2 py-1 text-[11px] font-bold uppercase text-white">
+                        Programming
+                    </span>
+
+                    <h3 class="mt-3 text-lg font-bold leading-7 hover:underline">
+                        JavaScript 2025: Top New Features
+                    </h3>
+
+                    <p class="mt-2 text-sm leading-6 text-slate-500 dark:text-slate-400">
+                        Learn about the latest features in JavaScript and how they can improve your projects.
+                    </p>
+
+                    <div
+                        class="mt-4 flex items-center justify-between border-t border-slate-200 pt-3 text-xs text-slate-500 dark:border-slate-700 dark:text-slate-400">
+
+                        <span>By Alex Johnson</span>
+                        <span>Apr 21, 2025</span>
+                        <span>◷ 5 min read</span>
+
+                    </div>
+
+                </div>
+            </article>
+
+
+            <!-- ================= CARD 6 ================= -->
+            <article data-category="EMERGING TECH"
+                class="overflow-hidden rounded-lg border border-slate-200 bg-white text-gray-900 transition duration-100 hover:-translate-y-1 hover:shadow-[3px_3px_6px_rgba(0,0,0,0.8)] dark:border-slate-700 dark:bg-gray-900 dark:text-white">
+
+                <img src="imag/imag 6.jpeg" alt="Virtual Reality"
+                    class="h-48 w-full object-cover transition duration-300 hover:scale-110">
+
+                <div class="p-4">
+
+                    <span
+                        class="inline-block rounded-sm bg-orange-500 px-2 py-1 text-[11px] font-bold uppercase text-white">
+                        Emerging Tech
+                    </span>
+
+                    <h3 class="mt-3 text-lg font-bold leading-7 hover:underline">
+                        The Future of Virtual Reality
+                    </h3>
+
+                    <p class="mt-2 text-sm leading-6 text-slate-500 dark:text-slate-400">
+                        VR is becoming more realistic and useful in education, gaming, and work.
+                    </p>
+
+                    <div
+                        class="mt-4 flex items-center justify-between border-t border-slate-200 pt-3 text-xs text-slate-500 dark:border-slate-700 dark:text-slate-400">
+
+                        <span>By Michael Chen</span>
+                        <span>Apr 20, 2025</span>
+                        <span>◷ 5 min read</span>
+
+                    </div>
+
+                </div>
+            </article>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-[#071229] text-white mt-10 dark:bg-slate-950">
+
+        <div class="max-w-7xl mx-auto px-5 lg:px-8 py-9">
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+
+                <!-- TechPulse -->
+                <div>
+
+                    <h3 class="text-xs font-bold">
+
+                        <span
+                            class="flex h-7 w-7 items-center justify-center rounded-md bg-gray-900 text-sm text-blue-500 px-8">
+                            <span class="material-icons">bolt</span>
+                            TechPulse
+                        </span>
+
+                    </h3>
+
+                    <p class="text-[14px] text-slate-400 leading-4 mt-3 max-w-xs">
+                        Stay updated. Stay smart. Real technology
+                        insights, emerging software trends, and
+                        authoritative digital analysis for engineers
+                        and industry leaders.
+                    </p>
+
+                </div>
+
+
+                <!-- Quick Links -->
+                <div>
+
+                    <h4 class="text-[14px] font-semibold mb-3">
+                        Quick Links
+                    </h4>
+
+                    <div class="flex flex-col gap-2">
+
+                        <a href="../index.html" class="text-[14px] text-slate-400 hover:text-white">
+                            Home
+                        </a>
+
+                        <a href="#" class="text-[14px] text-slate-400 hover:text-white">
+                            News
+                        </a>
+
+                        <a href="./Blog.html" class="text-[14px] text-slate-400 hover:text-white">
+                            Blog
+                        </a>
+
+                        <a href="#" class="text-[14px] text-slate-400 hover:text-white">
+                            About
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Categories -->
+                <div>
+
+                    <h4 class="text-[14px] font-semibold mb-3">
+                        Categories
+                    </h4>
+
+                    <div class="grid grid-cols-2 gap-2">
+
+                        <a href="#" class="text-[14px] text-slate-400">
+                            AI
+                        </a>
+
+                        <a href="#" class="text-[14px] text-slate-400">
+                            Gadgets
+                        </a>
+
+                        <a href="#" class="text-[14px] text-slate-400">
+                            Software
+                        </a>
+
+                        <a href="#" class="text-[14px] text-slate-400">
+                            Cybersecurity
+                        </a>
+
+                        <a href="#" class="text-[14px] text-slate-400">
+                            Programming
+                        </a>
+
+                        <a href="#" class="text-[14px] text-slate-400">
+                            Emerging Tech
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Bottom Footer -->
+            <div class="border-t border-slate-700 mt-7 pt-4 flex flex-col md:flex-row justify-between gap-3">
+
+                <p class="text-[14px] text-slate-500">
+                    © 2026 TechPulse. All rights reserved.
+                </p>
+
+                <div class="flex gap-4">
+
+                    <a href="#" class="text-[14px] text-slate-500">
+                        Privacy Policy
+                    </a>
+
+                    <a href="#" class="text-[14px] text-slate-500">
+                        Terms of Service
+                    </a>
+
+                    <a href="#" class="text-[14px] text-slate-500">
+                        Contact
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+    </footer>
+
+
+    <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>
